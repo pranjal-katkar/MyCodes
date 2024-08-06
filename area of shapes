@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+const double PI = 3.14159265;
+
+int main() {
+    int choice;
+    double radius, base, height, side,length,breadth, l;
+    
+    cout << "Choose a shape to calculate the area:\n";
+    cout << "1. Circle\n";
+    cout << "2. Triangle\n";
+    cout << "3. Square\n";
+    cout << "4. Cylinder\n";
+    cout << "5. Sphere\n";
+    cout << "6. Cone\n";
+    cout << "7. Rectangle\n";
+    cout << "Enter your choice (1-6): ";
+    cin >> choice;
+    
+    switch (choice) {
+        case 1:
+            cout << "Enter the radius of the circle: ";
+            cin >> radius;
+            cout << "Area of the circle: " << (PI * radius * radius) << endl;
+            break;
+            
+        case 2:
+            cout << "Enter the base and height of the triangle: ";
+            cin >> base >> height;
+            cout << "Area of the triangle: " << (0.5 * base * height) << endl;
+            break;
+            
+        case 3:
+            cout << "Enter the side length of the square: ";
+            cin >> side;
+            cout << "Area of the square: " << (side * side) << endl;
+            break;
+            
+        case 4:
+            cout << "Enter the radius and height of the cylinder: ";
+            cin >> radius >> height;
+            cout << "Surface area of the cylinder: " << (2 * PI * radius * (radius + height)) << endl;
+            break;
+            
+        case 5:
+            cout << "Enter the radius of the sphere: ";
+            cin >> radius;
+            cout << "Surface area of the sphere: " << (4 * PI * radius * radius) << endl;
+            break;
+            
+        case 6:
+            cout << "Enter the radius and slant height of the cone: ";
+            cin >> radius >> height;
+            l = sqrt(radius * radius + height * height); // Slant height
+            cout << "Surface area of the cone: " << (PI * radius * (radius + l)) << endl;
+            break;
+            
+        case 7:
+            cout << "Enter the length and breadth of rectangle: ";
+            cin >> length >> breadth;
+            cout << "area of the rectangle: " <<(length*breadth) << endl;
+            break;
+            
+        default:
+            cout << "Invalid choice! Please enter a number between 1 and 6." << endl;
+    }
+    
+    return 0;
+}
+
