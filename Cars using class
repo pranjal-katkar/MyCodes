@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class Car {
+public:
+    string brand;
+    string model;
+    int year;
+    string color;
+    double engineSize;
+
+    Car(string b, string m, int y, string c, double e) {
+        brand = b;
+        model = m;
+        year = y;
+        color = c;
+        engineSize = e;
+    }
+
+    
+    void displayDetails() {
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+        cout << "Color: " << color << endl;
+        cout << "Engine Size: " << engineSize << " liters" << endl;
+        cout << endl;
+    }
+};
+
+int main() {
+    
+    Car toyota("Toyota", "Supra", 2023, "Red", 3.0);
+    Car honda("Honda", "City", 2024, "Blue", 1.5);
+    Car koenigsegg("Koenigsegg", "Agera RS", 2022, "Silver", 5.0);
+
+    
+    cout << "Toyota Supra Specifications:" << endl;
+    toyota.displayDetails();
+
+    cout << "Honda City Specifications:" << endl;
+    honda.displayDetails();
+
+    cout << "Koenigsegg Agera RS Specifications:" << endl;
+    koenigsegg.displayDetails();
+
+    return 0;
+}
