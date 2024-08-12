@@ -1,0 +1,88 @@
+#include<iostream>
+#include<graphics.h>
+using namespace std;
+ class pixel
+{
+public:
+int x,y,dx,dy,m,count;
+int xinc,yinc,i;
+ void DDALine(int x1,int y1,int x2,int y2,int color)
+ {
+ dx=x2-x1;
+ dy=y2-y1;
+ if(dx>=dy)
+
+ count=dx;
+ else
+ count=dy;
+ m=dx/dy;
+ xinc=dx/count;
+ yinc=dy/count;
+ if(dx>dy && x1<x2)
+ {
+ xinc=1;
+ yinc=m;
+ for(i=1;i<count;i++)
+ {
+ x1=x1+xinc;
+ y1=y1+yinc;
+ putpixel(x1,y1,WHITE);
+ }
+ }
+if(dx>dy && x1>x2)
+ {
+ xinc=1;
+ yinc=m;
+ for(i=1;i<count;i++)
+ {
+ x1=x1+xinc;
+ y1=y1+yinc;
+ putpixel(x1,y1,WHITE);
+ }
+ }
+ if(dx<dy && y1<y2)
+{
+xinc=-1/m;
+yinc=-1;
+for(i=0;i<=count;i++)
+{
+x1=x1+xinc;
+x2=y1+yinc;
+putpixel(x1,y1,WHITE);
+}
+}
+if(dx<dy && y1>y2)
+ {
+ xinc=-1/m;
+ yinc=-1;
+ for(i=0;i<count;i++)
+ {
+ x1=x1+xinc;
+ y1=y1+yinc;
+
+ }
+ }
+ }
+};
+int main()
+{
+int gd=DETECT,gm;
+int x1,x2,y1,y2;
+pixel a;
+int color;
+cout<<endl<<"Enter the x1:";
+cin>>x1;
+cout<<endl<<"Enter the x2:";
+cin>>x2;
+cout<<endl<<"Enter the y1:";
+cin>>y1;
+cout<<endl<<"Enter the y2:";
+cin>>y2;
+cout<<endl<<"Enter the colour";
+cin>>color;
+initgraph(&gd,&gm,0);
+a.DDALine(x1,y1,x2,y2,color);
+getch();
+closegraph();
+return 0;
+}
