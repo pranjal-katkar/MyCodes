@@ -64,21 +64,21 @@ inline void display(); // Inline function declaration
 void person::getdata(char name[20])
 {
 strcpy(this->name,name); //this pointer
-cout<<"\n Enter date of birth";
+cout<<"\nEnter date of birth(dd/mm/yy): ";
  cin>>dob;
-cout<<"\n Enter blood group";
+cout<<"\nEnter blood group: ";
  cin>>blood;
-cout<<"\n Enter height";
+cout<<"\nEnter height: ";
  cin>>ht;
-cout<<"\n Enter weight";
+cout<<"\nEnter weight: ";
  cin>>wt;
-cout<<"\n Enter address";
+cout<<"\nEnter address: ";
 cin>>pai->address;
-cout<<"\n Enter Licence number";
+cout<<"\nEnter Licence number: ";
  cin>>pai->license;
-cout<<"\n Enter Insurance policy number";
+cout<<"\nEnter Insurance policy number: ";
  cin>>pai->insurance;
-cout<<"\n Enter Contact number";
+cout<<"\nEnter Contact number: ";
 cin>>pai->contact;
 count++;
 }
@@ -104,12 +104,12 @@ p1=new person; //call default constructor & dynamic memory allocation
 p2=new person(p1); //call copy constructor
 cout<<"\tName";
 cout<<"\tDob";
-cout<<"\t Blood";
+cout<<"\t    Blood";
 cout<<"\tHt";
 cout<<"\tWt";
 cout<<"\tAddress";
-cout<<"\tLicense";
-cout<<"\tInsurance";
+cout<<"\t  License";
+cout<<"\t  Insurance";
 cout<<"\tContact";
 cout<<endl;
 cout<<"Default Constructor Value \n";
@@ -129,12 +129,13 @@ int x=0;
 cout<<"\n1.Enter the record";
 cout<<"\n2.Display the record";
 cout<<"\n3.Exit";
+cout<<"\nENTER CHOICE: ";
 cin>>ch;
 switch(ch)
 {
 case 1:
 {
-cout<<"\nEnter the Name ";
+cout<<"\nEnter the Name: ";
 cin>>name;
 p3[x].getdata(name);
 person::showcount(); // calls static function
